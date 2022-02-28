@@ -1,0 +1,52 @@
+.griditem{
+    padding-top: 7px;
+    height: 40px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.iconsStyle {
+    float: left;
+    margin: 0 10px;
+}
+
+.description{
+    line-height: 14px;
+}
+
+.priceDesc{
+    font-weight: 600;
+    color: var(--chakra-colors-primary);
+}
+
+@media screen and (max-width: 936px) {
+    .menu{ display: none; }
+    .leftContent{ 
+        width: 150%!important; grid-column: span 10/span 8!important; }
+}
+
+@media screen and (max-width: 636px) {
+    .img{ display: none; }
+    .listContent{font-size: 8px;}
+    th{
+        font-size: 8px;
+        padding: 0!important;
+        margin: 0!important;
+    }
+    td{
+        font-size: 8px;
+        padding: 0!important;
+        margin: 0!important;
+    }
+}
+
+.iconCollapse{
+    cursor: pointer;
+    float: right;
+}
+
+.paginator button{
+    width: 35px;
+    
+}

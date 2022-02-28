@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.chakra-ui-light{
+  color: var(--chakra-colors-secondary)
+}
+
+.active{
+  background-color: var(--chakra-colors-primary);
+  color: white;
+}
+
+.formControl{
+  margin: 10px 0;
+  padding-right: 10px;
+  font-size:12px;
+}
+.formControl select, .formControl input, .formControl label{
+  font-size:12px;
+}
+.subtitle{
+  font-weight: 600;
+  color: var(--chakra-colors-primary);
+  margin-bottom: 10px;
+}
+
+ .scrolly{
+            width: 460px;
+            height: 100px;
+            overflow-y: hidden;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            margin: 0 auto;
+            white-space: nowrap
+        }
+
+        .box {
+          min-width: 200px;
+          height: 70px;
+          margin: 1rem;
+        }

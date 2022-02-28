@@ -1,24 +1,64 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider, extendTheme  } from '@chakra-ui/react'
 
-function App() {
+import "@fontsource/inter"
+
+import Routes from './routes';
+
+const App = () => {
+  
+const activeLabelStyles = {
+  transform: 'scale(0.85) translateY(-24px) translateX(-10px)',
+}
+
+const customTheme = extendTheme({
+  semanticTokens: {
+    fonts: {
+      body: 'inter',  
+    },
+    colors:{
+      primary: '#0065FF',
+      secondary: '#1D2C4B',
+      success: '#36B37E'
+    }
+  },
+  components: {
+    Form: {
+      variants: {
+        floating: {
+          container: {
+            _focusWithin: {
+              label: {
+                ...activeLabelStyles,
+              },
+            },
+            'input:not(:placeholder-shown) + label, .chakra-select__wrapper + label':
+              {
+                ...activeLabelStyles,
+              },
+            label: {
+              top: 0,
+              left: 0,
+              zIndex: 2,
+              position: 'absolute',
+              backgroundColor: 'white',
+              pointerEvents: 'none',
+              mx: 3,
+              px: 1,
+              my: 2,
+            },
+          },
+        },
+      },
+    },
+  }
+})
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ChakraProvider theme={customTheme} >
+        <Routes/>
+      </ChakraProvider >
     </div>
   );
 }
